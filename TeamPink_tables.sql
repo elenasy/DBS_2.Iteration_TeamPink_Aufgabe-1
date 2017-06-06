@@ -28,7 +28,6 @@ CREATE TABLE public.text
 (
     retweet_count integer,
     favorite_count integer,
-    date date,
     "time" timestamp without time zone,
     "ID_text" integer NOT NULL,
     CONSTRAINT text_pkey PRIMARY KEY ("ID_text")
@@ -83,9 +82,8 @@ ALTER TABLE public.includes
 CREATE TABLE public.is_retweet
 (
     retweet_count integer,
-    favorite_count integer,
-    date date, 
-    "time" time without time zone,
+    favorite_count integer, 
+    "time" timestamp without time zone,
     "ID_text" integer,
     org_author character varying(127) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT is_retweet_pkey PRIMARY KEY (org_author),
